@@ -19,15 +19,20 @@ export const jwtSecret = process.env.JWT_SECRET || 'abcdef';
 
 
 // MOMO STUFF
-export const partnerCode = "MOMOKLHU20211025";
-export const accessKey = "ZaJDPNooBAEIDkLd";
-export const secretkey = "apzcpZayg1uDeim32NUAspfVAHjUjvez";
+export const partnerCode = "MOMO";
+// export const partnerCode = "MOMOKLHU20211025";
+export const accessKey = "F8BBA842ECF85";
+// export const accessKey = "ZaJDPNooBAEIDkLd";
+export const secretkey = "K951B6PE1waDMi640xX08PD3vg6EkVlz";
+// export const secretkey = "apzcpZayg1uDeim32NUAspfVAHjUjvez";
 // export const orderId = requestId;
 export const redirectUrl = FEAddress;
 export const ipnUrl = 
     `${IS_PRODUCTION 
         ? 'https://e-sushi-be.herokuapp.com' 
-        : 'http://1a98-14-169-198-135.ngrok.io'}/webhook/momo`;
+        : 'https://aa2c-113-22-198-84.ap.ngrok.io'}/webhook/momo`;
+        
+        // : 'http://1a98-14-169-198-135.ngrok.io'}/webhook/momo`;
 export const requestType = "captureWallet"
 export const extraData = ""; //pass empty value if your merchant does not have stores
 // END MOMO STUFF

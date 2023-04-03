@@ -32,7 +32,7 @@ export async function orderForAUser(req, res, next) {
     let sID = req.cookies.sessionId;
     const user = await MODEL.SessionService.getUserBySessionID(sID);
     const data = await MODEL.OrderService.getOrderByUserId(user.id);
-    res.status(200).send(data);
+    res.status(200).send(data.reverse());
   } catch (err) {
     return next(err);
   }
@@ -105,7 +105,7 @@ export async function getCheckoutUrl(req, res, next) {
     }
 
     const fees = await requestFees(cityId, districtId);
-    const deliveryFee = fees.data[0].total_fee;
+    const deliveryFee = fees.data.rates[0].services[0].total_amount;
   
     const amount = order.OrderContent.TotalPrice + deliveryFee;
     const momoOrderId = `${orderId}_${new Date().getTime()}`;
