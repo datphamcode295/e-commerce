@@ -20,7 +20,7 @@ export async function orderGetAll(req, res, next) {
   const isAdmin = await MODEL.SessionService.isAdminSession(sID);
   if (isAdmin) {
     const data = await MODEL.OrderService.getAllOrder();
-    res.status(200).send(data);
+    res.status(200).send(data.reverse());
   }
   else {
     res.status(200).send("Not Authorized");

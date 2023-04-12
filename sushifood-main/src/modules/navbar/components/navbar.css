@@ -1,0 +1,23 @@
+.cart {
+    position: absolute;
+    top: 10px;
+    right: 150px;
+    /* padding: 0px 6px; */
+    height: 20px;
+    width: 20px;
+    /* line-height: 2rem; */
+    border-radius: 50%;
+    font-size: 12px;
+    /* font-weight: 600; */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* font-family: var(--font-family); */
+    background-color: rgb(221, 3, 3);
+}
+
+.item-dropdown-text:hover {
+    color: #b0484a;
+    cursor: pointer;
+}

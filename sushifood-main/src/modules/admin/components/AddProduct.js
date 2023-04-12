@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import AddProductPopup from "../../popup/AddProductPopup"
+import '../assets/admin.css'
 
 const AddProduct = (props) => {
     const [isOpenModal, setOpenModal] = useState(false);
@@ -14,8 +15,12 @@ const AddProduct = (props) => {
     }
     return(
         <div>
-            <button onClick={onClick} className={`w-full bg-white py-2 pl-2 pr-3 border border-gray-300 rounded-md leading-5 text-gray-900 placeholder-gray-500 hover:bg-gray-900 hover:text-white sm:text-md my-7`}>
+            {/* <button onClick={onClick} className="add-btn">
                 Add new product
+            </button> */}
+            <button className="add-btn" onClick={onClick}>
+                <div className="plus">+</div>
+                <div className="text">Add new dish</div>
             </button>
             <AddProductPopup onClose={onClose} isOpenModal={isOpenModal} onProductUpdate={onProductUpdate}/>
         </div>

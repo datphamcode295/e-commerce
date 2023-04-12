@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+
+.wrapper-listOrder {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 20px;
+}
+.wrapper-foodOrder-listOrder {
+    /* width: 100%; */
+    /* box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); */
+    /* border-radius: 20px; */
+    
+    /* box-shadow: rgb(0 0 0 / 20%) 0px 0.3rem 1rem; */
+    /* padding: 0 20px; */
+    width: 70%;
+}
+
+.wrapper-foodOrderItem-listOrder {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #f1f1f1;
+    padding: 15px 20px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.wrapper-foodOrderItem-listOrder:hover {
+    background-color: #f4f8f9;
+    border-radius: 10px 0 0 10px;
+}
+
+.heading-listOrder {
+    font-size: 20px;
+    /* font-weight: 600; */
+    font-family: sans-serif;
+    padding: 15px 20px;
+}
+
+.section-listOrder {
+    display: flex;
+    margin-top: 10px;
+    font-weight: 600;
+    padding: 20px;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.section-item-listOrder:nth-child(1),
+.order-item-listOrder:nth-child(1) {
+    width: 5%;
+}
+
+.section-item-listOrder:nth-child(2),
+.order-item-listOrder:nth-child(2) {
+    width: 13%;
+}
+
+.section-item-listOrder:nth-child(3),
+.order-item-listOrder:nth-child(3) {
+    width: 17%;
+}
+
+.section-item-listOrder:nth-child(4),
+.order-item-listOrder:nth-child(4) {
+    width: 45%;
+    padding-right: 10px;
+}
+
+.section-item-listOrder:nth-child(5),
+.order-item-listOrder:nth-child(5) {
+    width: 20%;
+}
+
+.section-item-listOrder {
+    font-family: sans-serif;
+}
+
+.detail-order-listOrder {
+    width: 30%;
+    padding: 15px;
+    background-color: #f4f8f9;
+    height: 75vh;
+    border-radius: 10px;
+}
+
+.heading-detail-listOrder {
+    font-size: 20px;
+    font-family: sans-serif;
+    /* font-weight: 600; */
+    margin-bottom: 20px;
+}
+
+.heading-detail-text {
+    display: flex;
+    justify-content: space-between; 
+    margin: 20px 0;
+}
+
+.detail-orderID-text {
+    color: #9d9d9d;
+    font-size: 13px;
+}
+
+.detail-orderID {
+    font-size: 14px;
+    /* font-weight: 600; */
+    font-family: sans-serif;
+}
+
+.heading-detail-menu {
+    display: flex;
+    justify-content: space-between; 
+}
+
+.detail-menu-name {
+    margin-left: 20px;
+    font-size: 14px;
+}
