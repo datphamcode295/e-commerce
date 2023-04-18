@@ -1,21 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
-.wrapper-landingPage{
-    /* display: none; */
-    /* position: absolute; */
+*{
+    /* box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -msbox-sizing: border-box; */
+}
+
+html, body {
+  overflow-x: hidden;
+}
+body {
+  /* position: relative; */
 }
 
 .banner {
-    overflow: hidden;
-    width: 100%;
+    /* overflow: hidden; */
+    /* width: 100%; */
     /* display: flex; */
-    margin: 0px auto 650px auto;
+    margin: 0px auto 250px auto;
 }
 
 .banner-text {
-    position: absolute;
-    top: 25%;
-    left: 10%;
+    position: relative;
+    top: 40px;
+    left: 60px;
 }
 
 .banner-heading {
@@ -50,8 +58,10 @@
 
 .banner-image {
     position: absolute;
+    /* right: -380px;
+    bottom: -15%; */
     right: -380px;
-    bottom: -15%;
+    /* bottom: -10px; */
     scale: 0.6;
 }
 

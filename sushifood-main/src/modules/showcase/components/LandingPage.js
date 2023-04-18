@@ -9,7 +9,7 @@ import sushiDelivery from '../assets/sushi-delivery.jpeg'
 
 const LandingPage = () => {
     return(
-            <div className="max-w-7xl mx-auto py-6 wrapper-landingPage">
+            <div className="max-w-7xl mx-auto py-6">
                 {/* <div className="max-w-7xl mx-auto py-6 px-4 ">
                     <img className="object-cover h-64 w-full"src={Banner}/>
                 </div> */}

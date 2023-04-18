@@ -176,7 +176,7 @@ const Navbar = (props) => {
                   </div>
                 </div>
                 <div className="hidden md:block">
-                  <div className="ml-4 flex items-center md:ml-6">
+                  <div className="ml-4 flex items-center md:ml-6 cart-wrapper">
                     <button
                       type="button"
                       className="p-1 rounded-full text-black-400 hover:text-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
@@ -187,9 +187,9 @@ const Navbar = (props) => {
                           className="h-6 w-6"
                           aria-hidden="true"
                         />{" "}
-                        <div className="cart">{numberOfCartItems}</div>
                         
                       </Link>
+                      <div className="cart">{numberOfCartItems}</div>
                     </button>
 
                     <Menu as="div" className="ml-3 relative" open>
