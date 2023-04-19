@@ -29,7 +29,7 @@ export const secretkey = "K951B6PE1waDMi640xX08PD3vg6EkVlz";
 export const redirectUrl = FEAddress;
 export const ipnUrl = 
     `${IS_PRODUCTION 
-        ? 'https://e-sushi-be.herokuapp.com' 
+        ? 'https://e-commerce-neon-nu-85.vercel.app' 
         : 'https://aa2c-113-22-198-84.ap.ngrok.io'}/webhook/momo`;
         
         // : 'http://1a98-14-169-198-135.ngrok.io'}/webhook/momo`;
