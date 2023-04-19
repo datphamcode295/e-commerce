@@ -31,7 +31,16 @@ app.use(express.raw());
 
 
 
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
+
+
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', 'https://e-commerce-7iiv.vercel.app');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  res.header('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT');
+  res.header('Access-Control-Allow-Credentials', 'true');
+  next();
+});
 
 app.use('/auth', authRoute);
 app.use('/product', productRoute);
