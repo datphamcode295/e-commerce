@@ -54,14 +54,14 @@ const Navbar = (props) => {
     ? [
         <Menu.Item key="3">
           <div className={"block px-4 py-2 text-sm text-gray-700"}>
-            <b>{props.user.name}</b>
+            <b className='text-lg'>{props.user.name}</b>
           </div>
         </Menu.Item>,
         props.user.role === "Admin" ? (
           <Menu.Item key="4">
             <a href="/manageproduct">
               <div className={"block px-4 py-2 text-sm text-gray-700"}>
-                <span className="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700">
+                <span className="block py-2 rounded-md text-base font-medium text-gray-400 item-dropdown-text">
                   Manage Product
                 </span>
               </div>
@@ -72,7 +72,7 @@ const Navbar = (props) => {
           <Menu.Item key="4">
             <a href="/manageorder">
               <div className={"block px-4 py-2 text-sm text-gray-700"}>
-                <span className="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700">
+                <span className="block py-2 rounded-md text-base font-medium text-gray-400 item-dropdown-text">
                   Manage Order
                 </span>
               </div>
@@ -81,10 +81,10 @@ const Navbar = (props) => {
         ) : null,
         <Menu.Item key="5">
           <div
-            className={"block px-4 py-2 text-sm text-gray-700"}
+            className={"block px-4 py-2 text-sm text-gray-700 cursor-pointer"}
             onClick={logout}
           >
-            <span className="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700">
+            <span className="block py-2 rounded-md text-base font-medium text-gray-400 item-dropdown-text">
               Logout
             </span>
           </div>
@@ -95,16 +95,17 @@ const Navbar = (props) => {
           {({ active }) => (
             <div
               className={classNames(
-                active ? "bg-gray-100" : "",
-                "block px-4 py-2 text-sm text-gray-700"
+                active ? "block py-2 rounded-md text-base font-medium text-gray-400 item-dropdown-text" : "",
+                "block px-4 py-2 text-base text-gray-700 cursor-pointer"
               )}
+              onClick={() => setOpen((o) => !o)}
             >
               {/* <LoginPopup/> */}
 
               <button
                 type="button"
                 className="button"
-                onClick={() => setOpen((o) => !o)}
+                
               >
                 Login
               </button>
@@ -115,18 +116,19 @@ const Navbar = (props) => {
           {({ active }) => (
             <div
               className={classNames(
-                active ? "bg-gray-100" : "",
-                "block px-4 py-2 text-sm text-gray-700"
+                active ? "block py-2 rounded-md text-base font-medium text-gray-400 item-dropdown-text" : "",
+                "block px-4 py-2 text-base text-gray-700 cursor-pointer"
               )}
+              onClick={() => setOpenRegister((o) => !o)}
             >
               {/* <RegisterPopup/> */}
 
               <button
                 type="button"
                 className="button"
-                onClick={() => setOpenRegister((o) => !o)}
+                
               >
-                Login
+                Register
               </button>
             </div>
           )}
@@ -134,7 +136,7 @@ const Navbar = (props) => {
       ];
 
   const cartCtx = useContext(CartContext);
-  console.log(cartCtx.items);
+  // console.log(cartCtx.items);
   const numberOfCartItems = cartCtx.items.reduce(
     (acc, item) => acc + item.amount,
     0
@@ -161,9 +163,9 @@ const Navbar = (props) => {
                           href={item.href}
                           className={classNames(
                             item.current
-                              ? "bg-gray-700 text-white"
+                              ? ""
                               : "hover:bg-gray-400 hover:text-white",
-                            "px-3 py-2 rounded-md text-sm font-medium"
+                            "px-3 py-2 rounded-md font-medium item-dropdown-text"
                           )}
                           aria-current={item.current ? "page" : undefined}
                         >
@@ -174,7 +176,7 @@ const Navbar = (props) => {
                   </div>
                 </div>
                 <div className="hidden md:block">
-                  <div className="ml-4 flex items-center md:ml-6">
+                  <div className="ml-4 flex items-center md:ml-6 cart-wrapper">
                     <button
                       type="button"
                       className="p-1 rounded-full text-black-400 hover:text-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
@@ -185,14 +187,15 @@ const Navbar = (props) => {
                           className="h-6 w-6"
                           aria-hidden="true"
                         />{" "}
-                        {numberOfCartItems}
+                        
                       </Link>
+                      <div className="cart">{numberOfCartItems}</div>
                     </button>
 
                     <Menu as="div" className="ml-3 relative" open>
-                      <Menu.Button className="max-w-xs rounded-full flex items-center text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+                      <Menu.Button className="max-w-xs flex items-center text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white">
                         <img
-                          className="h-8 w-8 rounded-full"
+                          className="h-8 w-8"
                           src={
                             props.user.sessionId
                               ? genericProfileIcon
@@ -210,7 +213,7 @@ const Navbar = (props) => {
                         leaveFrom="transform opacity-100 scale-100"
                         leaveTo="transform opacity-0 scale-95"
                       >
-                        <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+                        <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" style={{zIndex:'100'}}>
                           {userMenuItems}
                         </Menu.Items>
                       </Transition>

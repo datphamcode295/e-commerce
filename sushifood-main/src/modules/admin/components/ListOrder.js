@@ -6,6 +6,7 @@ import ItemDropdown from "./ItemDropdown"
 import openBox from '../assets/open-box.png'
 import closeBox from '../assets/close-box.png'
 import { renderDateTime } from "../../common/components/renderDateTime"
+import '../assets/ListOrder.css'
 
 const ListOrders = () => {
   const [orders,setOrders] = useState([]);
@@ -15,11 +16,17 @@ const ListOrders = () => {
     setOrders(res);
   },[]);
 
+  const [detail, setDetail] = useState()
+  const handleShowDetail = (orderId) => {
+    const order = orders.find((order) => order._id === orderId);
+    console.log(order)
+    setDetail(order)
+  }
   return (
-    <div>
-      {orders.map(item => {
+    <div className='wrapper-listOrder'>
+      {/* {orders.map((item, index) => {
         return (
-          <div className="mt-10 shadow-md" style={{ paddingBottom: "30px" }}>
+          <div key={index} className="mt-10 shadow-md" style={{ paddingBottom: "30px" }}>
             <div className="grid grid-cols-2 gap-4 py-3">
               <div className="grid grid-cols-5 gap-10 border-r-2 border-gray-900">
                 <div className="col-span-2 m-auto">
@@ -70,7 +77,84 @@ const ListOrders = () => {
             </div>
           </div>
         )
-      })}
+      })} */}
+      <div className='wrapper-foodOrder-listOrder'>
+        <div className="heading-listOrder"><b>Food Order</b></div>
+        <div className="section-listOrder">
+          <div className="section-item-listOrder"></div>
+          <div className="section-item-listOrder"><b>Customer</b></div>
+          <div className="section-item-listOrder"><b>Order date</b></div>
+          <div className="section-item-listOrder"><b>Address</b></div>
+          <div className="section-item-listOrder"><b>Status</b></div>
+        </div>
+        <div style={{maxHeight: '55vh', overflowY: 'scroll'}}>
+          {orders.map((item, index) => {
+            return (
+              <div key={index} className='wrapper-foodOrderItem-listOrder' onClick={() => handleShowDetail(item._id)}>
+                <div className="order-item-listOrder">{index + 1}</div>
+                <div className="order-item-listOrder">{item.CustomerName}</div>
+                <div className="order-item-listOrder">{renderDateTime(item.OrderDate)}</div>
+                <div className="order-item-listOrder">{item.PaymentInfo.info}</div>
+                <div className="order-item-listOrder">
+                  <ItemDropdown id={item._id} status={item.OrderStatus} />
+                </div>
+              
+              </div>
+            )
+          })}
+        </div>
+      </div>
+
+      <div className="detail-order-listOrder">
+        <div className="heading-detail-listOrder"><b>Detail Order</b></div>
+        {detail &&
+          <>
+            {/* {detail?.map((item, index) => {
+              return (
+                <div key={index} className="detail-item-listOrder">
+                  <div style={{width: '70%'}}>{item.ProductName}</div>
+                  <div>{item.Quantity} {item.Quantity > 1 ? ' items' : ' item'}</div>
+                </div>
+              )
+            })} */}
+    
+            <div className='heading-detail-text'>
+              <div>
+                <div className='detail-orderID-text'>Order ID</div>
+                <div className='detail-orderID'><b>#{detail._id}</b></div>
+              </div>
+              <div>
+                <div className='detail-orderID-text'>Total</div>
+                <div className='detail-orderID'><b>{Intl.NumberFormat().format(detail.OrderContent.TotalPrice + detail.PaymentInfo.deliveryFee)} VND</b></div>
+              </div>
+            </div>
+
+            <div className='heading-detail-text'>
+              <div className='detail-orderID-text'>Recipient</div>
+              <div className='detail-orderID'>{detail.RecipientName}</div>
+            </div>
+
+            <div className='heading-detail-menu'>
+              <div className='detail-orderID-text'>Menu</div>
+            </div>
+            {detail.OrderContent.itemList.map((item, index) => (
+              <div key={index}>
+                {/* <div className='detail-orderID'>{item.ProductName}</div> */}
+                <div className='heading-detail-menu'>
+                  <div className='detail-menu-name'>{item.ProductName}</div>
+                  <div className='detail-orderID'>{item.Quantity} {item.Quantity > 1 ? ' items' : ' item'}</div>
+                </div>
+              </div>
+              
+            ))}
+
+            <div className='heading-detail-text'>
+              <div className='detail-orderID-text'>Delivery fee</div>
+              <div className='detail-orderID'>{Intl.NumberFormat().format(detail.PaymentInfo.deliveryFee)} VND</div>
+            </div>
+          </>
+        }
+      </div>
     </div>
   );
 }

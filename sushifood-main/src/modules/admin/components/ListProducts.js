@@ -5,7 +5,7 @@ const ListOrders = (props) => {
     props.onProductUpdate();
   }
   return (
-    <div>
+    <>
       {props.orders.map(data => {
         return <Product 
           key={data._id}
@@ -19,7 +19,7 @@ const ListOrders = (props) => {
           onProductUpdate={onProductUpdate}
         />
       })}
-    </div>
+    </>
   );
 }
 

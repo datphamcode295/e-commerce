@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+
+.wrapper-itemCard {
+    /* font-family: 'Source Sans Pro', sans-serif; */
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.product-image {
+    border: 1px solid #f1f1f1;
+    border-radius: 10px;
+    width: 20%;
+}
+
+.product-name-ingredients {
+    grid-column: span 3 / span 3;
+    width: 30%;
+    margin-left: 10px;
+}
+
+.product-ingredients {
+    color: #909090;
+    font-size: 12px;
+    margin-top: 5px;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.product-price-info {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    justify-content: end;
+    /* padding-left: 20px; */
+}
+
+.product-price-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 30%;
+    border-radius: 10px;
+    border: 1px solid #e9e9e9;
+    color: #8b8b8b;
+    line-height: 28px;
+}
+
+.adjust-btn {
+    width: 30%;
+    font-size: 12px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.adjust-btn:hover { 
+    background-color: #e9e9e9;
+    border-radius: 8px;
+    /* border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px; */
+}
+
+.product-price {
+    width: 55%;
+    text-align: center;
+    /* font-weight: 600; */
+}
+
+.product-price-remove {
+    color: #969696;
+    width: max-content;
+    cursor: pointer;
+    text-align: end;
+}

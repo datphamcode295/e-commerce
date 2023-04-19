@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import Item from './Item';
 import * as api from '../../../utils/api/index.js';
-
+import "./ListItem.css"
  
 const ListItems = () => {
 
@@ -13,7 +13,7 @@ const ListItems = () => {
     },[]);
     
     return(
-        <div className="mt-14 grid md:grid-cols-3 md:gap-4 ">
+        <div className="list">
             {sushiItems.map(item=>{
                 return <Item 
                     key={item._id}
@@ -23,6 +23,7 @@ const ListItems = () => {
                     quantity={item.quantity}
                     amount={item.amount}
                     img={process.env.PUBLIC_URL + item.image}
+                    ingredients={item.ingredients}
                 />
             })}
         </div>

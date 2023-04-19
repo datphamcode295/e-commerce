@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+*{
+    /* box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -msbox-sizing: border-box; */
+}
+
+html, body {
+  overflow-x: hidden;
+}
+body {
+  /* position: relative; */
+}
+
+.banner {
+    /* overflow: hidden; */
+    /* width: 100%; */
+    /* display: flex; */
+    margin: 0px auto 250px auto;
+}
+
+.banner-text {
+    position: relative;
+    top: 40px;
+    left: 60px;
+}
+
+.banner-heading {
+    font-family: 'Pacifico', cursive;
+    font-size: 90px;
+}
+
+.banner-subheading {
+    width: 50%;
+    font-size: 18px;
+    color: #888;
+    margin-bottom: 30px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.circle {
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.circle:nth-child(1) {
+    background-color: #ecf2f6;
+    left: -200px;
+}
+
+.circle:nth-child(2) {
+    background-color: #f7efe8;
+    right: -200px;
+}
+
+.banner-image {
+    position: absolute;
+    /* right: -380px;
+    bottom: -15%; */
+    right: -380px;
+    /* bottom: -10px; */
+    scale: 0.6;
+}
+
+.order-btn {
+    background-color: #b0484a;
+    /* width: 150px; */
+    text-align: center;
+    padding: 14px 35px;
+    color: white;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.order-btn:hover {
+    opacity: 0.8;
+}
+
+.why {
+    margin-bottom: 40px;
+}
+
+.why-text {
+    font-family: 'Pacifico', cursive;
+    font-size: 70px;
+    text-align: center;
+}
+
+.why-category {
+    
+    width: 100%;
+    padding: 40px;
+    background-color: #f9f9f9;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.why-item {
+    width: 30%;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.why-item__image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+}
+
+.why-item__content-heading {
+    font: semibold;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.why-item__content-text {
+    color: #888;
+    font-family: 'Poppins', sans-serif;
+}

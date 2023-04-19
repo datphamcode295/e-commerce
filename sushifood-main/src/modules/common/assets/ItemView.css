@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+.wrapper-itemView {
+    width: 100%;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: rgb(0 0 0 / 20%) 0px 0.3rem 1rem;
+    transition: transform .3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.wrapper-itemView:hover {
+    transform: scale(1.05);
+    transition: all .3s ease-in-out;
+    box-shadow: rgb(0 0 0 / 20%) 0px 0.5rem 1rem;
+}
+
+.img {
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: rgb(0 0 0 / 20%) 0px 0.3rem 1rem;
+}
+
+.name {
+    font-size: 28px;
+    /* font-weight: 600; */
+    margin: 20px 0 10px 0;
+    font: semibold;
+    /* font-family: 'Source Sans Pro', sans-serif; */
+}
+
+.ingredients {
+    color: #ccc;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 10px;
+}
+
+.price-cart {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+    margin-top: auto;
+}
+
+.price {
+    font-size: 20px;
+    color: #b1516b;
+    font-weight: 600;
+}
+
+.cart-logo {
+    height: 46px;
+    width: 46px;
+    border-radius: 10px;
+    background-color: #ffefe4;
+    color: #b1516b;
+    padding: 9px;
+    cursor: pointer;
+}
+
+.cart-logo:hover {
+    opacity: 0.8;
+}
